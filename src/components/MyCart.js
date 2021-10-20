@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { TransitionGroup } from 'react-transition-group'
 
 class MyCart extends Component {
     formatDate (timestamp) {
@@ -13,8 +13,8 @@ class MyCart extends Component {
         
         return(
             <div>
-                <CSSTransitionGroup
-                        transitionName="transPhones"
+                <TransitionGroup
+                        transitionName="Phones"
                         transitionAppear={true}
                         transitionAppearTimeout={500}
                         transitionEnterTimeout={500}
@@ -48,7 +48,7 @@ class MyCart extends Component {
                     : (
                         <div class="ui placeholder">No Phone in your cart...</div>
                     )}
-                 </CSSTransitionGroup>
+                 </TransitionGroup>
             </div>
         )
     }

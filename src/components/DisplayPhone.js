@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { CSSTransitionGroup } from 'react-transition-group'
+import { TransitionGroup } from 'react-transition-group'
 
 import Phone from './Phone'
 
@@ -9,7 +9,7 @@ class DisplayPhone extends Component {
         const { displayPhones } = this.props
         return(
             <div>
-                <CSSTransitionGroup
+                <TransitionGroup
                         transitionName="transPhones"
                         transitionAppear={true}
                         transitionAppearTimeout={500}
@@ -21,7 +21,7 @@ class DisplayPhone extends Component {
                             <Phone key={phone} id={phone} />
                             
                     ))}
-                </CSSTransitionGroup>
+                </TransitionGroup>
             </div>
         )
     }

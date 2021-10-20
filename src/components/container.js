@@ -46,7 +46,7 @@ class Container extends Component {
 }
 
 function mapStateToProps({phones}){
-    const inCart_phones = Object.keys(phones).filter((phone) => phones[phone].inCart == 'true')
+    const inCart_phones = Object.keys(phones).filter((phone) => phones[phone].inCart === 'true')
     const outCart_phones = Object.keys(phones).filter((phone) => !inCart_phones.includes(phone))
 
     return{

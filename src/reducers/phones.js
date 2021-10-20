@@ -1,14 +1,23 @@
-import {
-    RECEIVE_PHONES
-} from '../actions/phone.js'
-export default function phones(state = {}, action) {
-    switch (action.type) {
+import { RECEIVE_PHONES } from '../actions/phone'
+export const MOVE_INCART = 'MOVE_INCART'
+
+export default function phones(state={}, action){
+    switch(action.type){
         case RECEIVE_PHONES:
             return {
                 ...state,
                 ...action.phones
             }
-            default:
-                return state
+        case MOVE_INCART:
+            return{
+                ...state,
+                [action.id]:{
+                    ...state[action.id],
+                    timestamp:action.timestamp,
+                    inCart: 'true'
+                }
+            }
+        default:
+            return state
     }
 }
